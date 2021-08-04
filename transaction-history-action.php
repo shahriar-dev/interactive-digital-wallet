@@ -3,20 +3,21 @@ require "dbGet.php";
 
 $flag = true;
 
-echo "<h3>Total Records:(" . $TotalRecords . ")</h3>";
+
 
 if (!empty($_GET['date']) && !empty($_GET['time'])) {
     $result = search($_GET['date'], $_GET['time']);
-} elseif (empty($_GET['time'])) {
+} elseif (!empty($_GET['time'])) {
     $result = searchByTime($_GET['time']);
-} elseif (empty($_GET['date'])) {
+} elseif (!empty($_GET['date'])) {
     $result = searchByDate($_GET['date']);
 } else {
     $result = getTransactionAll();
 }
 
-
 if (count($result) > 0) {
+    $TotalRecords = count($result);
+    echo "<h3>Total Records:(" . $TotalRecords . ")</h3>";
     echo "<table>
             <tr>
             <th>Transaction Category</th>
@@ -33,6 +34,8 @@ if (count($result) > 0) {
         echo "<td>" . $result[$i]['time'] . "</td>";
         echo "</tr>";
     }
+} else {
+    echo "<h3>No Transaction Found</h3>";
 }
 ?>
 </table>

@@ -2,7 +2,7 @@
 function insertTransaction($category, $recipient, $amount)
 {
     $date = date("Y-m-d", time());
-    $time = date("h:i:sa");
+    $time = date("h:i");
     $connection = connect();
 
     $query = "INSERT INTO transaction_details (transaction_category, recipient, amount, date, time) VALUES (?, ?, ?, ?, ?)";

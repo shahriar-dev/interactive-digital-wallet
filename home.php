@@ -9,25 +9,31 @@ require "homeVariable.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Digital Wallet</title>
+    <style>
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+
+        .link {
+            padding-bottom: 20px;
+        }
+
+        a {
+            padding-right: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Page 1 [Home]</h1>
     <h3>Digital Wallet</h3>
-
-    <span>
-        <table>
-            <style>
-                td {
-                    padding-right: 20px;
-                }
-            </style>
-            <tr>
-                <td><a href="home.php">1. Home</a></td>
-                <td><a href="transaction-history.php">2. Transaction History</a></td>
-            </tr>
-        </table>
-    </span>
+    <div class="link">
+        <a href="home.php">1. Home</a>
+        <a href="transaction-history.php">2. Transaction History</a>
+    </div>
 
     <h3>Fund Transfer</h3>
     <div>

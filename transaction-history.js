@@ -16,6 +16,15 @@ function search() {
         xhttp.open('GET', "transaction-history-action.php?date=" + inputdate.value +"&time=" + inputtime.value);
         xhttp.send();
     }
+    else if(date){
+        xhttp.open('GET', "transaction-history-action.php?date=" + inputdate.value);
+        xhttp.send();
+    } else if(time) {
+        xhttp.open('GET', "transaction-history-action.php?time=" + inputtime.value);
+        xhttp.send();
+    } else {
+        document.getElementById('search-result').innerHTML = "<h3>Provide necessary information</h3>"
+    }
 }
 
 function checkinputtime() {

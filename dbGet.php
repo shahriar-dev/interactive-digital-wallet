@@ -18,7 +18,7 @@ function search($date, $time)
     $sql->bind_param('ss', $date, $time);
     $sql->execute();
     $res = $sql->get_result();
-    return $res->num_rows === 1;
+    return $res->fetch_all(MYSQLI_ASSOC);
 }
 
 function searchByDate($date)
@@ -29,7 +29,7 @@ function searchByDate($date)
     $sql->bind_param('s', $date);
     $sql->execute();
     $res = $sql->get_result();
-    return $res->num_rows === 1;
+    return $res->fetch_all(MYSQLI_ASSOC);
 }
 function searchByTime($time)
 {
@@ -39,5 +39,5 @@ function searchByTime($time)
     $sql->bind_param('s', $time);
     $sql->execute();
     $res = $sql->get_result();
-    return $res->num_rows === 1;
+    return $res->fetch_all(MYSQLI_ASSOC);
 }
