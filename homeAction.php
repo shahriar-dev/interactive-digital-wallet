@@ -79,3 +79,4 @@ function Test_User_Input($Data)
 {
     return trim(htmlspecialchars(stripcslashes($Data)));
 }
+}

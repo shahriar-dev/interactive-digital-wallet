@@ -1,17 +1,3 @@
-<?php
-$TotalRecords = "";
-$TransactionCategory = "";
-$Amount = "";
-$To = "";
-$TransferredOn = "";
-
-define("filepath", "data.txt");
-$retrievedData = json_decode(file_get_contents(filepath));
-$TotalRecords = count($retrievedData);
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
